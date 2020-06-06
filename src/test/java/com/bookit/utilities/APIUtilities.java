@@ -20,7 +20,7 @@ public class APIUtilities {
 
     /**
      * This method is used to retrieve token from the server.
-     * Token bust be attached to the header of every API call
+     * Token must be attached to the header of every API call
      *
      * @return token
      */
@@ -166,7 +166,12 @@ public class APIUtilities {
         return response;
     }
 
-//    public static void ensureUserDoesntExist(String email, String password){
-//        Response response = getUserID(e)
-//    }
+    public static void ensureUserDoesntExist(String email, String password) {
+        int userID = getUserID(email, password);
+        //condition is true if userID is a positive value
+        //there is no users with 0 or negative id
+        if (userID > 0) {
+            deleteUserByID(userID);
+        }
+    }
 }
