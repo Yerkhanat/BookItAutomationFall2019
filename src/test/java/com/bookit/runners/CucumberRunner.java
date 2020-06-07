@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
                 "json:target/cucumber.json"
         },
 
-       tags = "@ui",
+      // tags = "@ui",
         dryRun = false
 
 )
